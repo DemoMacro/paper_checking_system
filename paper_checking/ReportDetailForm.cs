@@ -39,15 +39,15 @@ namespace paper_checking
             StreamReader file2 = new StreamReader(rptDetailPath, Encoding.Default);
             string line2;
             int rnnum = 0;
-            while ((line2 = file2.ReadLine()) != null)
-            {
-                if (line2 != "")
-                {
-                    sourceFile2.Append(line2 + "\r\n");
-                    rnnum++;
-                }
-            }
-            file2.Close();
+            // while ((line2 = file2.ReadLine()) != null)
+            // {
+            //     if (line2 != "")
+            //     {
+            //         sourceFile2.Append(line2 + "\r\n");
+            //         rnnum++;
+            //     }
+            // }
+            // file2.Close();
             //sourceFile2 += "#####\r\n";
             sourceFile2.Append("\r\n论文原文（标红为重复部分）：\r\n");
             int startWords = sourceFile2.Length - rnnum - 2;
@@ -62,7 +62,7 @@ namespace paper_checking
             StreamReader file = new StreamReader(rptPath,Encoding.Default);
             string line;
 
-            string titletemp = "查重报告\r\n\r\n\r\n    头部           中前部          中部          中后部          尾部\r\n\r\n被测论文：" + paperName + "\r\n总重复率： " + file.ReadLine() + " %\r\n\r\n其中包含：\r\n";
+            string titletemp = "查重报告\r\n\r\n\r\n    头部           中前部          中部          中后部          尾部\r\n\r\n被测论文：" + paperName + "\r\n总重复率： " + file.ReadLine() + " %\r\n\r\n"; // + " %\r\n\r\n其中包含：\r\n"
             //sourceFile2 = titletemp + sourceFile2+"\r\n";
             startWords += titletemp.Length - 9;
             //startWords = sourceFile2.IndexOf("#####\r\n") + "#####\r\n".Length;

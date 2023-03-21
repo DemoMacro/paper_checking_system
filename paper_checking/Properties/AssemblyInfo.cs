@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("文本查重")]
-[assembly: AssemblyDescription("https://github.com/tianlian0/paper_checking_system")]
+[assembly: AssemblyDescription("https://github.com/DemoMacro/paper_checking_system")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("文本查重系统")]
-[assembly: AssemblyCopyright("tianlian0 Copyright ©  2022")]
+[assembly: AssemblyCopyright("Demo Macro © 2022")]
 [assembly: AssemblyTrademark("TextCheck")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.9.0.16")]
-[assembly: AssemblyFileVersion("0.9.0.16")]
+[assembly: AssemblyVersion("0.0.0")]
+[assembly: AssemblyFileVersion("0.0.0")]
 [assembly: NeutralResourcesLanguage("zh-Hans")]

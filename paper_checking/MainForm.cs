@@ -271,7 +271,7 @@ namespace paper_checking
         private void MainFormLoad(object sender, EventArgs e)
         {
             lblVersion.Text = Application.ProductVersion;
-            cmbCheckWay.SelectedIndex = 0;
+            cmbCheckWay.SelectedIndex = 1;
             //如果存在配置文件
             if (File.Exists("config.ini"))
             {
@@ -399,11 +399,6 @@ namespace paper_checking
         private void BtnManageLibrary_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", Application.StartupPath + Path.DirectorySeparatorChar + RunningEnv.ProgramParam.TxtPaperSourcePath);
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://xincheck.com/?id=28");
         }
     }
    
