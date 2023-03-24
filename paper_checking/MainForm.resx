@@ -118,9 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox4.Text" xml:space="preserve">
-    <value>Github：https://github.com/DemoMacro/paper_checking_system
-
-使用本系统的注意事项
+    <value>使用本系统的注意事项
 
 1、本系统只支持简体中文的文字查重，其他语言的查重结果不保证可靠，并可能提示失败。
 2. 横向查重：比较同一批次内是否存在横向抄袭。应用场景举例：比较该批次中一百篇论文是否存在抄袭现象。
