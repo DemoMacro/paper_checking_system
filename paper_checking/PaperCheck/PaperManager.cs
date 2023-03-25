@@ -86,11 +86,11 @@ namespace paper_checking.PaperCheck
                         text = file_converter.ConvertToString(path, runningEnv.CheckData.Blocklist);
                         if (text != null && text.Length > 0)
                         {
-                            if (text.Length > RunningEnv.ProgramParam.MaxWords)
-                            {
-                                //舍弃过长的部分
-                                text = text.Substring(0, RunningEnv.ProgramParam.MaxWords);
-                            }
+                            // if (text.Length > RunningEnv.ProgramParam.MaxWords)
+                            // {
+                            //     //舍弃过长的部分
+                            //     text = text.Substring(0, RunningEnv.ProgramParam.MaxWords);
+                            // }
                             //写入目标路径
                             File.WriteAllText(dist_path, text, Encoding.GetEncoding("GBK"));
                         }
@@ -231,7 +231,7 @@ namespace paper_checking.PaperCheck
          */
         public void StartCheckPaper()
         {
-            Utils.AdsMessage();
+            // Utils.AdsMessage();
             //判断是否已经有一个正在进行的任务
             if (!Monitor.TryEnter(RunningEnv.EnvRunningLock))
             {
