@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
+using NPOI.XWPF.UserModel;
 
 namespace paper_checking.PaperCheck.Convert
 {
@@ -7,21 +10,22 @@ namespace paper_checking.PaperCheck.Convert
     {
         public override string ConvertToString(string path, string blockText)
         {
-            Spire.Doc.Document doc = null;
+            System.Text.Encoding encoding = EncodingType.GetType(path);
+            FileStream stream = new FileStream(path, FileMode.Open);
             string text = null;
             try
             {
-                doc = new Spire.Doc.Document();
-                doc.LoadFromFile(path);
+                XWPFDocument doc = null;
+                doc = new XWPFDocument(stream);
                 try
                 {
-                    doc.Sections[0].HeadersFooters.Header.ChildObjects.Clear();
-                    doc.Sections[0].HeadersFooters.Footer.ChildObjects.Clear();
+                    foreach (var item in doc.Paragraphs)
+                    {
+                        text += item.ParagraphText;
+                    }
                 }
                 catch
                 { }
-                // 这里使用了Spire Doc免费版，免费版有篇幅限制。在加载或操作Word文档时，要求Word文档不超过500个段落，25个表格。如您有更高的需求，请自行购买、升级使用付费版。
-                text = doc.GetText();
                 text = text.Replace("#", "").Replace('\r', '#').Replace('\n', '#');
                 text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
                 text = new Regex("[#]+").Replace(text, "@@").Trim();
@@ -29,13 +33,11 @@ namespace paper_checking.PaperCheck.Convert
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
             }
             finally
             {
-                if (doc != null)
-                {
-                    doc.Close();
-                }
+                stream.Close();
             }
             return text;
         }

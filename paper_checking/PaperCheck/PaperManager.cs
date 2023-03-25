@@ -33,7 +33,7 @@ namespace paper_checking.PaperCheck
             int taskNo = int.Parse(param[0].ToString());
             DirectoryInfo sourceFolder = new DirectoryInfo(param[1]);
             DirectoryInfo textFolder = new DirectoryInfo(param[2]);
-            
+
             //判断源文件夹和目标文件夹是否存在
             if (!sourceFolder.Exists || !textFolder.Exists)
             {
@@ -100,7 +100,7 @@ namespace paper_checking.PaperCheck
                         //没有获取到转换器则忽略
                         continue;
                     }
-                    
+
                     //如果转换后的文件不符合所设阈值则删除
                     if (new FileInfo(dist_path).Length <= runningEnv.CheckData.MinBytes || text.Length <= runningEnv.CheckData.MinWords)
                     {
@@ -115,6 +115,7 @@ namespace paper_checking.PaperCheck
                 catch (Exception e)
                 {
                     runningEnv.CheckingData.ErrorPaperList.AddLast(NextFile.Name);
+                    Console.Write(e.ToString());
                 }
             }
         }
@@ -272,7 +273,7 @@ namespace paper_checking.PaperCheck
                     {
                         //如果是横向查重
                         real_check_param = new string[8] { runningEnv.CheckData.CheckThreshold.ToString(),
-                                                            runningEnv.SettingData.CheckThreadCnt.ToString(), 
+                                                            runningEnv.SettingData.CheckThreadCnt.ToString(),
                                                             i.ToString(),
                                                             RunningEnv.ProgramParam.SecurityKey,
                                                             RunningEnv.ProgramParam.ToCheckTxtPaperPath,
@@ -310,6 +311,7 @@ namespace paper_checking.PaperCheck
                             MessageBox.Show("未知线程错误，全部或部分文件查重失败。请在查重结束后检查！", "错误");
                         }));
                     }
+                    Console.Write(e.ToString());
                 }
             }
 
@@ -343,7 +345,7 @@ namespace paper_checking.PaperCheck
         public void ExportReport()
         {
             //检查所需数据是否存在
-            if (!Directory.Exists(RunningEnv.ProgramParam.ReportPath)||
+            if (!Directory.Exists(RunningEnv.ProgramParam.ReportPath) ||
                 !Directory.Exists(RunningEnv.ProgramParam.ReportDataPath) ||
                 !Directory.Exists(RunningEnv.ProgramParam.ToCheckTxtPaperPath))
             {

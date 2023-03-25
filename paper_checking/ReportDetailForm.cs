@@ -14,7 +14,7 @@ namespace paper_checking
         private readonly string dp2 = "";
         private readonly string dp3 = "";
 
-        public ReportDetailForm(string p,string p1,string p2, string p3)
+        public ReportDetailForm(string p, string p1, string p2, string p3)
         {
             InitializeComponent();
             paperName = p;
@@ -55,11 +55,11 @@ namespace paper_checking
             while ((line2 = file3.ReadLine()) != null)
             {
                 if (line2.Trim() != "")
-                    sourceFile2.Append(line2.Replace("@@","\r\n") + "\r\n\r\n");
+                    sourceFile2.Append(line2.Replace("@@", "\r\n") + "\r\n\r\n");
             }
             file3.Close();
 
-            StreamReader file = new StreamReader(rptPath,Encoding.Default);
+            StreamReader file = new StreamReader(rptPath, Encoding.Default);
             string line;
 
             string titletemp = "查重报告\r\n\r\n\r\n    头部           中前部          中部          中后部          尾部\r\n\r\n被测论文：" + paperName + "\r\n总重复率： " + file.ReadLine() + " %\r\n\r\n"; // + " %\r\n\r\n其中包含：\r\n"
@@ -88,7 +88,7 @@ namespace paper_checking
 
             p1.Y = 29;
             p2.Y = 34;
-            for (int sss=0;sss<5;sss++)
+            for (int sss = 0; sss < 5; sss++)
             {
                 p1.X = 125 * (sss + 1);
                 p2.X = 125 * (sss + 1);

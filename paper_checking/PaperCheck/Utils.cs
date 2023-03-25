@@ -114,7 +114,7 @@ namespace paper_checking.PaperCheck
                     sw.WriteLine("0");
             }
             catch
-            { 
+            {
             }
             finally
             {
@@ -245,7 +245,7 @@ namespace paper_checking.PaperCheck
                     {
                         runningEnv.UIContext.BeginInvoke(new Action(() =>
                         {
-                           runningEnv.UIContext.pbCheckingProgress.Value = temp;
+                            runningEnv.UIContext.pbCheckingProgress.Value = temp;
                         }));
                     }
                 }

@@ -1,7 +1,5 @@
 ﻿# 简体中文论文查重系统
 
-> 该存储库为[MARK LIU](https://github.com/tianlian0)所开发的[简体中文论文查重系统](https://github.com/tianlian0/paper_checking_system)的一个分支。
-
 ## 开始
 
 ## 兼容性要求
@@ -14,7 +12,7 @@ VS2017 及以上版本，需要安装 VS2015 运行时库和.NET Framework。
 
 ## 故障排除
 
-1. 如果 Spire 报错，可能是因为项目刚拉下来，相关的第三方包还没有下载，可以等待 VS 自动下载或者打开 NuGet 手动下载缺少的包。
+1. 如果报错，可能是因为项目刚拉下来，相关的第三方包还没有下载，可以等待 VS 自动下载或者打开 NuGet 手动下载缺少的包。
 2. 本项目不再提供 32 位操作系统支持，如果您使用 32 位操作系统将无法使用本系统。
 3. 本系统不适用于没有本地比较库的用户。添加对比库时，必须使用对比库管理标签下的 "添加到对比库 "按钮来添加，自己直接复制文件到文件夹中是无效的，相当于没有添加对比库。
 
@@ -55,18 +53,14 @@ VS2017 及以上版本，需要安装 VS2015 运行时库和.NET Framework。
 ## 原则
 
 1. 每两个文件都要相互比较是否有连续相同的字符串，如果超过查重阈值，则认为这些词是重复的。然而，如果一个文本的重复率低于 0. 25%，或者重复的字数少于 30 个，就不会被认为是重复的。另外，如果一个文本从另一个文本中多次复制一个句子，那么只有其中一个句子被认为是重复的。
-2. 文件的格式化是用 pdfbox 和 spire word free 完成的，对文本进行格式化，删除文本中的摘要、目录、参考文献和非汉字。
+2. 文件的格式化是用 pdfbox 和 NOPI 完成的，对文本进行格式化，删除文本中的摘要、目录、参考文献和非汉字。
 3. 生成的查重报告为 rtf 格式。
-
-## 依赖
-
-- [ikvm](https://github.com/tianlian0/ikvm)
 
 ## 贡献
 
 - [Demo Macro](https://github.com/DemoMacro) - Always believe that good things are about to happen.
 - [MARK LIU](https://github.com/tianlian0)
 
-## 许可证
+## 参考
 
-- 代码 - [GPL v2](LICENSE)
+[简体中文论文查重系统](https://github.com/tianlian0/paper_checking_system)

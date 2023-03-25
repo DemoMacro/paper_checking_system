@@ -84,7 +84,7 @@ namespace paper_checking
             {
                 runningEnv.CheckData.MinBytes = 0;
             }
-            if(runningEnv.CheckData.MinWords < 0 || runningEnv.CheckData.MinWords > 99998)
+            if (runningEnv.CheckData.MinWords < 0 || runningEnv.CheckData.MinWords > 99998)
             {
                 runningEnv.CheckData.MinWords = 0;
             }
@@ -158,15 +158,15 @@ namespace paper_checking
             Thread fileConvertThread = new Thread(new ThreadStart(paperManager.StartFileConvertStandalone));
             fileConvertThread.Start();
         }
-        
+
         /*
          * 开始查重
-         */ 
+         */
         private void ButtonStartChecking(object sender, EventArgs e)
         {
             //判断参数合法性
-            if (int.Parse(txtCheckThreshold.Text) <= 0 || 
-                int.Parse(txtCheckThreadCnt.Text) <= 0 || 
+            if (int.Parse(txtCheckThreshold.Text) <= 0 ||
+                int.Parse(txtCheckThreadCnt.Text) <= 0 ||
                 int.Parse(txtConvertThreadCnt.Text) <= 0 ||
                 int.Parse(txtMinBytes.Text) < 0 ||
                 int.Parse(txtMinWords.Text) < 0)
@@ -176,7 +176,7 @@ namespace paper_checking
             }
 
             //判断所需文件夹是否已选择
-            if (txtFinalReportPath.Text == "" || txtToCheckPaperPath.Text == "" || 
+            if (txtFinalReportPath.Text == "" || txtToCheckPaperPath.Text == "" ||
                 !Directory.Exists(txtFinalReportPath.Text) || !Directory.Exists(txtToCheckPaperPath.Text))
             {
                 MessageBox.Show(this, "待查论文文件夹或查重报告保存的文件夹不存在！", "提示");
@@ -204,7 +204,8 @@ namespace paper_checking
                                                         RunningEnv.ProgramParam.ReportDataPath);
                 reportListForm.ShowDialog();
             }
-            catch {
+            catch
+            {
                 MessageBox.Show(this, "查重报告数据损坏，无法展示！", "错误");
             }
             finally
@@ -400,6 +401,11 @@ namespace paper_checking
         {
             Process.Start("explorer.exe", Application.StartupPath + Path.DirectorySeparatorChar + RunningEnv.ProgramParam.TxtPaperSourcePath);
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-   
+
 }

@@ -47,7 +47,7 @@ namespace paper_checking
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int i=0;
+            int i = 0;
             listView1.SelectedItems.Clear();
             for (; i < listView1.Items.Count; i++)
             {
@@ -67,7 +67,7 @@ namespace paper_checking
             }
 
             listView1.Clear();
-            for (int FileInfoNo = curPageNum * 200-200; FileInfoNo < curPageNum * 200; FileInfoNo++)
+            for (int FileInfoNo = curPageNum * 200 - 200; FileInfoNo < curPageNum * 200; FileInfoNo++)
             {
                 FileInfo NextFile = fileInfo[FileInfoNo];
 
@@ -125,7 +125,7 @@ namespace paper_checking
             listView1.SelectedItems.Clear();
             for (; i < listView1.Items.Count; i++)
             {
-                if (float.Parse(listView1.Items[i].SubItems[1].Text)> float.Parse(textBox2.Text))
+                if (float.Parse(listView1.Items[i].SubItems[1].Text) > float.Parse(textBox2.Text))
                 {
                     listView1.Items[i].Selected = true;
                 }
@@ -152,7 +152,7 @@ namespace paper_checking
                 sumPageNum = fileInfo.Length / 200;
             else
                 sumPageNum = fileInfo.Length / 200 + 1;
-            
+
             //if (sumPageNum > 0)
             //{
             //    sumPageNum--;

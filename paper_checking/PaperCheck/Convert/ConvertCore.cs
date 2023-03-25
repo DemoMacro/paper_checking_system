@@ -33,7 +33,8 @@ namespace paper_checking.PaperCheck.Convert
             {
                 foreach (string keyword in blockText.Split(' '))
                 {
-                    if(keyword.Length > 0){
+                    if (keyword.Length > 0)
+                    {
                         text = text.Replace(keyword, string.Empty);
                     }
                 }

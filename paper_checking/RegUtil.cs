@@ -8,7 +8,7 @@ namespace paper_checking
 {
     static class RegUtil
     {
-           
+
         public static bool SignatureDeformatter(string strKeyPublic, string strHashbyteDeformatter, string strDeformatterData)
         {
             try

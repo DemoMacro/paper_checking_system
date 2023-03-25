@@ -319,7 +319,7 @@
             this.txtCheckThreshold.Name = "txtCheckThreshold";
             this.txtCheckThreshold.Size = new System.Drawing.Size(132, 27);
             this.txtCheckThreshold.TabIndex = 1;
-            this.txtCheckThreshold.Text = "13";
+            this.txtCheckThreshold.Text = "10";
             this.txtCheckThreshold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DigitFilterKeyPress);
             // 
             // btnStartChecking
@@ -818,6 +818,7 @@
             this.textBox4.Size = new System.Drawing.Size(489, 260);
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = resources.GetString("textBox4.Text");
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // MainForm
             // 
