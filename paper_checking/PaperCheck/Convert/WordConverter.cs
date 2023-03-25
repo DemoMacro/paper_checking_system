@@ -21,7 +21,7 @@ namespace paper_checking.PaperCheck.Convert
                 {
                     foreach (var item in doc.Paragraphs)
                     {
-                        text += item.ParagraphText;
+                        text += item.ParagraphText + "\r";
                     }
                 }
                 catch
