@@ -200,8 +200,6 @@
             // chkStatisTable
             // 
             this.chkStatisTable.AutoSize = true;
-            this.chkStatisTable.Checked = true;
-            this.chkStatisTable.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkStatisTable.Location = new System.Drawing.Point(195, 378);
             this.chkStatisTable.Margin = new System.Windows.Forms.Padding(4);
             this.chkStatisTable.Name = "chkStatisTable";
