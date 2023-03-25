@@ -1,4 +1,8 @@
-﻿# 简体中文论文查重系统
+﻿<center>
+<img src="./resources/paper_checking_system.png" width="200" height="200" alt="简体中文查重系统" align=center />
+</center>
+
+# 简体中文查重系统
 
 ## 开始
 
