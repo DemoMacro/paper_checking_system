@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Text;
-using System.Runtime.InteropServices;
-using System.Drawing;
-using System.Windows.Forms;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 
 namespace RTF_Operation
 {

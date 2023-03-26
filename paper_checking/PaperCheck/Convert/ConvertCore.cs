@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace paper_checking.PaperCheck.Convert
+﻿namespace paper_checking.PaperCheck.Convert
 {
     public abstract class ConvertCore
     {

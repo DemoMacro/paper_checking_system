@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NPOI.XWPF.UserModel;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
-using NPOI.XWPF.UserModel;
 
 namespace paper_checking.PaperCheck.Convert
 {
@@ -10,7 +9,6 @@ namespace paper_checking.PaperCheck.Convert
     {
         public override string ConvertToString(string path, string blockText)
         {
-            System.Text.Encoding encoding = EncodingType.GetType(path);
             FileStream stream = new FileStream(path, FileMode.Open);
             string text = null;
             try

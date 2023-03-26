@@ -1,9 +1,9 @@
-﻿using System;
+﻿using RTF_Operation;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using RTF_Operation;
 
 namespace paper_checking
 {

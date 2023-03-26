@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Windows.Forms;
-using System.Threading;
+﻿using paper_checking.PaperCheck;
+using System;
 using System.Diagnostics;
-using paper_checking.PaperCheck;
+using System.IO;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace paper_checking
 {
@@ -211,10 +211,7 @@ namespace paper_checking
             }
             finally
             {
-                if (reportListForm != null)
-                {
-                    reportListForm.Dispose();
-                }
+                reportListForm?.Dispose();
             }
         }
 
@@ -403,7 +400,7 @@ namespace paper_checking
             Process.Start("explorer.exe", Application.StartupPath + Path.DirectorySeparatorChar + RunningEnv.ProgramParam.TxtPaperSourcePath);
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void TextBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
