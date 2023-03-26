@@ -63,7 +63,9 @@ namespace paper_checking.PaperCheck
                 {
                     real_dis_file_name = real_dis_file_name.Replace(rInvalidChar.ToString(), string.Empty);
                 }
-                string dist_path = textFolder.FullName + Path.DirectorySeparatorChar + real_dis_file_name + ".txt";
+
+                int i = 0;
+                string dist_path = textFolder.FullName + Path.DirectorySeparatorChar + i + "_" + real_dis_file_name + ".txt";
 
                 //文件已经被转换则忽略该文件
                 if (File.Exists(dist_path))
@@ -84,17 +86,16 @@ namespace paper_checking.PaperCheck
                     {
                         //获取文本
                         text = file_converter.ConvertToString(path, runningEnv.CheckData.Blocklist);
-                        
+
                         if (text != null && text.Length > 0)
                         {
-                            int i = 0;
                             while (text.Length > RunningEnv.ProgramParam.MaxWords)
                             {
-                                //舍弃过长的部分
+                                i++;
                                 string textMore = text.Substring(0, RunningEnv.ProgramParam.MaxWords);
                                 File.WriteAllText(textFolder.FullName + Path.DirectorySeparatorChar + i + "_" + real_dis_file_name + ".txt", textMore, Encoding.GetEncoding("GBK"));
+                                //舍弃过长的部分
                                 text = text.Substring(RunningEnv.ProgramParam.MaxWords);
-                                i++;
                             }
                             //写入目标路径
                             File.WriteAllText(dist_path, text, Encoding.GetEncoding("GBK"));
