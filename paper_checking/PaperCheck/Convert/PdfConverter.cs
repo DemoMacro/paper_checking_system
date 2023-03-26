@@ -37,8 +37,12 @@ namespace paper_checking.PaperCheck.Convert
                 pdffile = org.apache.pdfbox.Loader.loadPDF(new java.io.File(path));
                 PDFTextStripper pdfStripper = new PDFTextStripper();
                 text = pdfStripper.getText(pdffile);
-                text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！]", "");
-                text = Regex.Replace(text, @"\s", string.Empty);
+                text = text.Replace("#", "").Replace('\r', '#').Replace('\n', '#');
+                text = Regex.Replace(text, @"[^\u4e00-\u9fa5\p{P}]", "");
+                // 会导致一些特殊字符被过滤掉
+                // text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
+                // text = Regex.Replace(text, @"\s", string.Empty);
+                text = new Regex("[#]+").Replace(text, "@@").Trim("@".ToCharArray());
                 text = TextFormat(text, blockText);
             }
             finally

@@ -13,8 +13,10 @@ namespace paper_checking.PaperCheck.Convert
             {
                 string text = sr.ReadToEnd();
                 text = text.Replace("#", "").Replace('\r', '#').Replace('\n', '#');
-                text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
-                text = new Regex("[#]+").Replace(text, "@@").Trim();
+                text = Regex.Replace(text, @"[^\u4e00-\u9fa5\p{P}]", "");
+                // 会导致一些特殊字符被过滤掉
+                // text = Regex.Replace(text, @"[^\u4e00-\u9fa5\《\》\（\）\——\；\，\。\“\”\！\#]", "");
+                text = new Regex("[#]+").Replace(text, "@@").Trim("@".ToCharArray());
                 text = TextFormat(text, blockText);
                 return text;
             }

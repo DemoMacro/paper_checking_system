@@ -39,7 +39,7 @@ namespace paper_checking.PaperCheck.Convert
                     }
                 }
             }
-            text = new Regex("[。，；（）“”]+").Replace(text, "，");
+            // text = new Regex("[。，；（）“”]+").Replace(text, "，");
             text = text.Trim("@".ToCharArray());
             return text;
         }

@@ -35,8 +35,8 @@ namespace paper_checking
                 throw new Exception();
             }
             StringBuilder sourceFile2 = new StringBuilder("");
-            //sourceFile = File.ReadAllText(paperPath, Encoding.Default)+"\r\n";
-            StreamReader file2 = new StreamReader(rptDetailPath, Encoding.Default);
+            // sourceFile = File.ReadAllText(paperPath, Encoding.Default)+"\r\n";
+            // StreamReader file2 = new StreamReader(rptDetailPath, Encoding.Default);
             string line2;
             int rnnum = 0;
             // while ((line2 = file2.ReadLine()) != null)

@@ -84,7 +84,8 @@ namespace paper_checking
             {
                 runningEnv.CheckData.MinBytes = 0;
             }
-            if (runningEnv.CheckData.MinWords < 0 || runningEnv.CheckData.MinWords > 99998)
+            if (runningEnv.CheckData.MinWords < 0)
+            // if (runningEnv.CheckData.MinWords < 0 || runningEnv.CheckData.MinWords > 99998)
             {
                 runningEnv.CheckData.MinWords = 0;
             }
