@@ -84,13 +84,18 @@ namespace paper_checking.PaperCheck
                     {
                         //获取文本
                         text = file_converter.ConvertToString(path, runningEnv.CheckData.Blocklist);
+                        
                         if (text != null && text.Length > 0)
                         {
-                            // if (text.Length > RunningEnv.ProgramParam.MaxWords)
-                            // {
-                            //     //舍弃过长的部分
-                            //     text = text.Substring(0, RunningEnv.ProgramParam.MaxWords);
-                            // }
+                            int i = 0;
+                            while (text.Length > RunningEnv.ProgramParam.MaxWords)
+                            {
+                                //舍弃过长的部分
+                                string textMore = text.Substring(0, RunningEnv.ProgramParam.MaxWords);
+                                File.WriteAllText(textFolder.FullName + Path.DirectorySeparatorChar + i + "_" + real_dis_file_name + ".txt", textMore, Encoding.GetEncoding("GBK"));
+                                text = text.Substring(RunningEnv.ProgramParam.MaxWords);
+                                i++;
+                            }
                             //写入目标路径
                             File.WriteAllText(dist_path, text, Encoding.GetEncoding("GBK"));
                         }
