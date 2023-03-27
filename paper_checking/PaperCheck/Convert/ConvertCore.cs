@@ -1,4 +1,6 @@
-﻿namespace paper_checking.PaperCheck.Convert
+﻿using System.Text.RegularExpressions;
+
+namespace paper_checking.PaperCheck.Convert
 {
     public abstract class ConvertCore
     {
@@ -37,7 +39,7 @@
                     }
                 }
             }
-            // text = new Regex("[。，；（）“”]+").Replace(text, "，");
+            text = new Regex("[。，；（）“”]+").Replace(text, "，");
             text = text.Trim("@".ToCharArray());
             return text;
         }
