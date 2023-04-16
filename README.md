@@ -86,4 +86,4 @@ VS2017 及以上版本，需要安装 VS2015 运行时库和.NET Framework。
 
 ## 参考
 
-[简体中文论文查重系统](https://github.com/tianlian0/paper_checking_system)
+- [简体中文论文查重系统](https://github.com/tianlian0/paper_checking_system)
